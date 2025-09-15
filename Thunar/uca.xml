@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Abrir Terminal Aqui</name>
+	<submenu></submenu>
+	<unique-id>1729138223118708-3</unique-id>
+	<command>for f in %F; do if [ -d &quot;$f&quot; ]; then exo-open --working-directory &quot;$f&quot; --launch TerminalEmulator; elif [ -z &quot;$default&quot; ]; then default=1; exo-open --launch TerminalEmulator; fi done</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>utilities-terminal_su</icon>
+	<name>Abrir Root Terminal Aqui</name>
+	<submenu></submenu>
+	<unique-id>1729140050190947-4</unique-id>
+	<command>pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY dbus-launch lxterminal --default-working-directory=%f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>

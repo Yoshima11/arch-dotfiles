@@ -1,0 +1,2 @@
+/usr/sbin/hddtemp /dev/sda | cut -d' ' -f4 
+

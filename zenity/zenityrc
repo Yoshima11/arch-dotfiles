@@ -1,0 +1,14 @@
+[GtkDialog]
+style=rectangular
+border-width=2
+decoration-button-size=16
+
+[GtkWindow]
+resize-grip-height=0
+resize-grip-width=0
+
+[GtkButton]
+inner-border=2,2,2,2
+child-displacement-x=0
+child-displacement-y=0
+default-border=2,2,2,2

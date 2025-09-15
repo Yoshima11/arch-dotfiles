@@ -1,0 +1,1 @@
+/usr/sbin/hddtemp /dev/sdb | cut -d' ' -f4

@@ -1,0 +1,101 @@
+/* CONFIGURACIÓN PRINCIPAL */
+* {
+    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* BARRA PRINCIPAL */
+window#waybar {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px;
+}
+
+/* MÓDULOS CON ICONOS - Font Awesome solo para iconos */
+#cpu,
+#memory,
+#battery,
+#pulseaudio,
+#network,
+#clock,
+#tray,
+#temperature {
+    font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "PxPlus IBM VGA 9x16", monospace;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+/* WORKSPACES - Mantener PxPlus IBM */
+#workspaces {
+    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-size: 14px;
+}
+
+/* VENTANA ACTIVA */
+#window {
+    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* MODO SWAY */
+#mode {
+    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-size: 14px;
+    background-color: #ff0000;
+    color: #000000;
+}
+
+/* TOOLTIPS */
+tooltip {
+    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-size: 12px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #333333;
+    border-radius: 0px;
+}
+
+/* ESTADOS DE LOS MÓDULOS */
+#battery.warning {
+    color: #ffa500;
+}
+
+#battery.critical {
+    color: #ff0000;
+}
+
+#cpu.warning {
+    color: #ffa500;
+}
+
+#cpu.critical {
+    color: #ff0000;
+}
+
+#memory.warning {
+    color: #ffa500;
+}
+
+#memory.critical {
+    color: #ff0000;
+}
+
+/* ESTILOS PARA BOTONES */
+button {
+    border: none;
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: #333333;
+}
+
+/* SEPARADORES */
+#custom-separator {
+    color: #555555;
+    padding: 0 5px;
+}

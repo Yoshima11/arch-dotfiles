@@ -1,0 +1,16 @@
+return {
+  { import = "plugins.lsp-config" },
+  { import = "plugins.cmp" },
+  { import = "plugins.dap" },
+  { import = "plugins.conform" },
+  { import = "plugins.swenv" },
+  { import = "plugins.neotest" },
+  { import = "plugins.treesitter" },
+  { import = "plugins.gitsigns" },
+  { import = "plugins.telescope" },
+  { import = "plugins.tree" },
+  { import = "plugins.catppuccin" },
+  { import = "plugins.lualine" },
+  { import = "plugins.which-key" },
+  { import = "plugins.colorizer" },
+}
