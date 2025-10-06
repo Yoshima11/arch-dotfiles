@@ -1,14 +1,37 @@
 return {
   'mfussenegger/nvim-dap',
   dependencies = {
-    'mfussenegger/nvim-dap-python',
+    {
+      'mfussenegger/nvim-dap-python',
+      build = false, -- IMPORTANTE: Evitar instalación automática
+    },
     'rcarriga/nvim-dap-ui',
   },
   config = function()
     local dap = require('dap')
     local dapui = require('dapui')
 
-    require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+    -- Configurar dap-python solo si está disponible
+    local status_ok, _ = pcall(require, 'dap-python')
+    if status_ok then
+      require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+    else
+      -- Configuración manual como fallback
+      dap.adapters.python = {
+        type = 'executable',
+        command = 'python',
+        args = { '-m', 'debugpy.adapter' }
+      }
+      dap.configurations.python = {
+        {
+          type = 'python',
+          request = 'launch',
+          name = 'Launch file',
+          program = '${file}',
+          pythonPath = '~/.virtualenvs/debugpy/bin/python',
+        },
+      }
+    end
 
     dapui.setup()
 

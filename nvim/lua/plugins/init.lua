@@ -1,5 +1,5 @@
 return {
-  { import = "plugins.lsp-config" },
+--  { import = "plugins.lsp-config" },
   { import = "plugins.cmp" },
   { import = "plugins.dap" },
   { import = "plugins.conform" },

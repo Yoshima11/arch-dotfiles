@@ -1,6 +1,6 @@
 /* CONFIGURACIÓN PRINCIPAL */
 * {
-    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-family: "DejaVu Sans Mono";
     font-size: 14px;
     font-weight: normal;
 }
@@ -22,27 +22,29 @@ window#waybar {
 #clock,
 #tray,
 #temperature {
-    font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "PxPlus IBM VGA 9x16", monospace;
+    font-family: "DejaVu Sans Mono";
     font-size: 14px;
     margin: 0 5px;
 }
 
 /* WORKSPACES - Mantener PxPlus IBM */
 #workspaces {
-    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-family: "DejaVu Sans Mono";
     font-size: 14px;
+    color: #ffffff;
+    background-color: #1e1e1e;
 }
 
 /* VENTANA ACTIVA */
 #window {
-    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-family: "DejaVu Sans Mono";
     font-size: 14px;
     font-weight: bold;
 }
 
 /* MODO SWAY */
 #mode {
-    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-family: "DejaVu Sans Mono";
     font-size: 14px;
     background-color: #ff0000;
     color: #000000;
@@ -50,7 +52,7 @@ window#waybar {
 
 /* TOOLTIPS */
 tooltip {
-    font-family: "PxPlus IBM VGA 9x16", monospace;
+    font-family: "DejaVu Sans Mono";
     font-size: 12px;
     background-color: #1e1e1e;
     color: #ffffff;
