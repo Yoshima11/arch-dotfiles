@@ -1,0 +1,40 @@
+# ~/.config/mako/config
+
+# Configuración general
+font=DejaVu Sans Mono 10
+width=300
+height=100
+margin=10
+padding=10
+border-size=2
+border-radius=0
+
+# Colores (ejemplo)
+background-color=#285577
+text-color=#ffffff
+border-color=#4c7899
+
+# Posición
+anchor=top-right
+default-timeout=5000
+
+# Comportamiento
+sort=+time
+group-by=app-name
+
+# Configuración para navegadores
+[app-name="firefox"]
+default-timeout=5000
+
+[app-name="chromium"] 
+default-timeout=5000
+
+[app-name="google-chrome"]
+default-timeout=5000
+
+# FORZAR timeout para alta urgencia (YouTube)
+[urgency=high]
+default-timeout=5000
+
+# Configuración adicional para persistencia
+layer=overlay
