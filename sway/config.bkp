@@ -4,34 +4,21 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-exec_always {
-    export LANG=es_ES.UTF-8
-    export LC_ALL=es_ES.UTF-8
-    export LC_TIME=es_ES.UTF-8
-}
-
 ### colors
-# Bar colors - Yellow & Black theme
-set $bg-color #000000
-set $text-color #C1C15C
-set $inactive-text-color #6272A4
-set $urgent-bg-color #FF5555
-set $accent-yellow #C1C15C
-set $dark-yellow #B8860B
-set $black #000000
-set $gray #282A36
+# Bar
+set $bg-color #2f343f
+set $text-colot #f3f4f5
+set $inactive-text-colot #676E7D
+set $urgent-bg-color #E53935
+#Windows border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-### Colors
-# Window borders - Yellow focused, gray unfocused
-client.focused          $accent-yellow $accent-yellow $black $accent-yellow   $accent-yellow
-client.focused_inactive $gray $gray $accent-yellow $gray   $gray
-client.unfocused        $black $black $dark-yellow $black   $black
-client.urgent           $gray $urgent-bg-color $accent-yellow $urgent-bg-color   $urgent-bg-color
-client.placeholder      $black $black $accent-yellow $black   $black
+client.background       #F8F8F2
 
-client.background       $black
-
-### Font
 font pango:DejaVu Sans Mono 12
 
 ### Variables

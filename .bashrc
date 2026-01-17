@@ -60,7 +60,15 @@ export PATH="$PATH:/home/eduardo/.local/bin"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/.virtualenvs/"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/eduardo/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export LANG=es_ES.UTF-8
+export LC_TIME=es_ES.UTF-8
+export LC_ALL=es_ES.UTF-8

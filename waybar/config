@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 25,
+    "height": 32,
     "css": "~/.config/waybar/style.css",
     
     "modules-left": ["sway/workspaces", "sway/mode"],
@@ -40,28 +40,34 @@
         "format": "🕒 {:%H:%M:%S}",
         "format-alt": "📅 {:%a, %d %b %Y}",
         "tooltip-format": "{:%A, %d de %B de %Y}",
+	"locale": "es_ES.UTF-8",
         "timezone": "America/Argentina/Buenos_Aires",
 	"interval": 1,
-        "on-click-right": "GTK_THEME=Adwaita-dark ~/.config/waybar/yad-calendar.sh"
+        "on-click-right": "GTK_THEME=Adwaita-dark LC_TIME=es_ES.UTF-8 ~/.config/waybar/yad-calendar.sh"
     },
     
     "cpu": {
         "format": " {usage}%",
         "tooltip": "CPU: {usage}%",
-        "interval": 3
+        "interval": 5
     },
     
     "memory": {
-        "format": " {used:0.1f}G",
-        "format-alt": "  {percentage}%",
+        "format": " {used:0.1f}G",
+        "format-alt": "  {percentage}%",
         "tooltip": "RAM: {used:0.1f}G/{total:0.1f}G",
         "interval": 5
     },
     
+
     "temperature": {
-        "format": "🌡️ {temperatureC}°C",
-        "tooltip": "Temp: {temperatureC}°C",
-        "critical-threshold": 80
+    	"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    	"format": "🌡️ {temperatureC}°C",
+    	"format-critical": "🔥 {temperatureC}°C",
+    	"critical-threshold": 80,
+    	"interval": 5,
+    	"tooltip": true,
+    	"tooltip-format": "CPU Temp: {temperatureC}°C"
     },
     
     "battery": {

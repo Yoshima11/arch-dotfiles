@@ -7,8 +7,8 @@
 
 /* BARRA PRINCIPAL */
 window#waybar {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: #000000;
+    color: #B8860B;
     border: none;
     border-radius: 0px;
 }
@@ -31,8 +31,8 @@ window#waybar {
 #workspaces {
     font-family: "DejaVu Sans Mono";
     font-size: 14px;
-    color: #ffffff;
-    background-color: #1e1e1e;
+    color: #B8860B;
+    background-color: #000000;
 }
 
 /* VENTANA ACTIVA */
@@ -55,7 +55,7 @@ tooltip {
     font-family: "DejaVu Sans Mono";
     font-size: 12px;
     background-color: #1e1e1e;
-    color: #ffffff;
+    color: #B8860B;
     border: 2px solid #333333;
     border-radius: 0px;
 }

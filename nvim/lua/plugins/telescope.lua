@@ -1,33 +1,20 @@
+-- ~/.config/nvim/lua/plugins/telescope.lua
 return {
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-ui-select.nvim'
-    },
-    config = function()
-      require("telescope").setup({
-        extensions = {
-          ["ui-select"] = {
-            require("telescope.themes").get_dropdown {}
-          }
-        },
-        defaults = {
-          file_encoding = "utf-8",
-          file_ignore_patterns = {
-            "node_modules", ".git", ".cache"
-          },
-        }
-      })
-
-      require("telescope").load_extension("ui-select")
-
-      local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-      vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-    end
-  }
+  'nvim-telescope/telescope.nvim',
+  dependencies = { 'nvim-lua/plenary.nvim' },
+  config = function()
+    local telescope = require('telescope')
+    local builtin = require('telescope.builtin')
+    -- Configuración de apariencia
+    telescope.setup({
+      defaults = {
+        -- Esta tabla define los caracteres de los bordes. 
+        -- Los últimos 4 son las esquinas (arriba-izq, arriba-der, abajo-der, abajo-izq)
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+      }
+    })
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, {}) -- Buscar archivos
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})  -- Buscar texto en el proyecto
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})    -- Ver buffers abiertos
+  end
 }
