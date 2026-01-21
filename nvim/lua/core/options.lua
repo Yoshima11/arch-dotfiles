@@ -28,3 +28,8 @@ opt.updatetime = 250        -- Tiempo de respuesta más rápido para plugins
 
 -- --- Tecla Líder ---
 vim.g.mapleader = " "       -- Espacio como tecla líder (muy común en Neovim)
+
+-- --- Cursor titilante ---
+opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+-- --- views can only be fully collapsed with the global statusline ---
+opt.laststatus = 3

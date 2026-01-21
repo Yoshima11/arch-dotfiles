@@ -1,0 +1,42 @@
+-- ~/.config/nvim/lua/plugins/ai.lua
+return {
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    lazy = false,
+    version = false,
+    opts = {
+      provider = "ollama",
+      auto_suggestions_provider = "ollama",
+      ollama = {
+        endpoint = "http://127.0.0.1:1234",
+        model = "deepseek-coder-v2:16b", -- Asegúrate que coincida con LM Studio
+        api_key_name = "", -- LM Studio no requiere API Key
+        timeout = 30000,
+        options = {
+          temperature = 0,
+          num_ctx = 16384,
+          keep_alive = "5m",
+        }
+      },
+      behaviour = {
+        auto_suggestions = false, -- Cambiar a true si quieres autocompletado tipo Copilot
+        auto_set_highlight_group = true,
+        auto_set_keymaps = true,
+        auto_apply_diff_after_generation = false,
+        support_paste_from_clipboard = false,
+      },
+    },
+    keys = {
+      { "<leader>aa", function() require("avante.api").ask() end, desc = "AI Ask", mode = { "n", "v" } },
+      { "<leader>ae", function() require("avante.api").edit() end, desc = "AI Edit", mode = { "v" } },
+    },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons", 
+    },
+  },
+}
