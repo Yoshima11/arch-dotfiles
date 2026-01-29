@@ -6,8 +6,12 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias lsa='ls -a'
-alias lsal='ls -al'
+alias ll='ls -lh --color=auto'
+alias la='ls -lha --color=auto'
+alias l='ls -CF --color=auto'
+
+# Directorios amarillos, archivos normales, ejecutables verdes
+export LS_COLORS='di=1;33:ln=36:so=35:pi=35:ex=32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;42'
 
 alias grep='grep --color=auto'
 # bun
@@ -42,7 +46,9 @@ export HISTCONTROL=ignoreboth
 
 # Default command line prompt.
 PROMPT_DIRTRIM=2
-PS1='\n\[\e[90m\]┌\[\e[90m\][\[\e[31m\]\d\[\e[0m\] \[\e[31m\]\t\[\e[90m\]]\[\e[90m\][\[\e[94m\]\w\[\e[90m\]]\n\[\e[90m\]└\[\e[90m\][\[\e[0m\]\u\[\e[97;1m\]@\[\e[0m\]\h\[\e[90m\]]\[\e[0m\] \[\e[1m\]\$\[\e[0m\] '
+#PS1='\n\[\e[90m\]┌\[\e[90m\][\[\e[31m\]\d\[\e[0m\] \[\e[31m\]\t\[\e[90m\]]\[\e[90m\][\[\e[94m\]\w\[\e[90m\]]\n\[\e[90m\]└\[\e[90m\][\[\e[0m\]\u\[\e[97;1m\]@\[\e[0m\]\h\[\e[90m\]]\[\e[0m\] \[\e[1m\]\$\[\e[0m\] '
+#PS1='\n\[\e[90m\]┌\[\e[90m\][\[\e[31m\]\d\[\e[0m\] \[\e[31m\]\t\[\e[90m\]]\[\e[90m\][\[\e[93m\]\w\[\e[90m\]]\n\[\e[90m\]└\[\e[90m\][\[\e[0m\]\u\[\e[97;1m\]@\[\e[0m\]\h\[\e[90m\]]\[\e[0m\] \[\e[1m\]\$\[\e[0m\] '
+PS1='\n\[\e[90m\]┌\[\e[90m\][\[\e[31m\]\d\[\e[0m\] \[\e[31m\]\t\[\e[90m\]]\[\e[90m\][\[\e[38;5;220m\]\w\[\e[90m\]]\n\[\e[90m\]└\[\e[90m\][\[\e[0m\]\u\[\e[97;1m\]@\[\e[0m\]\h\[\e[90m\]]\[\e[0m\] \[\e[1m\]\$\[\e[0m\] '
 # Handles nonexistent commands.
 # If user has entered command which invokes non-available
 # utility, command-not-found will give a package suggestions.
