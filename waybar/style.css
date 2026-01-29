@@ -1,103 +1,72 @@
-/* CONFIGURACIÓN PRINCIPAL */
+/* RESET GENERAL */
 * {
-    font-family: "DejaVu Sans Mono";
+    border: none;
+    border-radius: 0;
+    font-family: "DejaVu Sans Mono", "Font Awesome 7 Free", "Font Awesome 7 Free Solid";
     font-size: 14px;
-    font-weight: normal;
+    min-height: 0;
 }
 
 /* BARRA PRINCIPAL */
 window#waybar {
     background-color: #000000;
     color: #B8860B;
-    border: none;
-    border-radius: 0px;
+    border-bottom: 2px solid #B8860B;
 }
 
-/* MÓDULOS CON ICONOS - Font Awesome solo para iconos */
-#cpu,
-#memory,
-#battery,
-#pulseaudio,
-#network,
-#clock,
-#tray,
-#temperature {
-    font-family: "DejaVu Sans Mono";
-    font-size: 14px;
-    margin: 0 5px;
-}
-
-/* WORKSPACES - Mantener PxPlus IBM */
-#workspaces {
-    font-family: "DejaVu Sans Mono";
-    font-size: 14px;
+/* ESTILO DE CADA MÓDULO */
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
     color: #B8860B;
-    background-color: #000000;
 }
 
-/* VENTANA ACTIVA */
-#window {
-    font-family: "DejaVu Sans Mono";
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* MODO SWAY */
-#mode {
-    font-family: "DejaVu Sans Mono";
-    font-size: 14px;
-    background-color: #ff0000;
+#workspaces button.active {
+    background-color: #B8860B;
     color: #000000;
+}
+
+#workspaces button:hover {
+    background-color: #333333;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#mode, #clock, #pulseaudio, #network, #cpu, #memory, #temperature, #battery, #tray, #window {
+    font-family: "Font Awesome 7 Free";
+    font-weight: 400;
+    padding: 0 10px;
+    margin: 4px 2px;
+}
+
+/* ESTADOS ESPECIALES */
+#battery.warning, #cpu.warning, #memory.warning {
+    color: #ffa500;
+}
+
+#battery.critical, #cpu.critical, #memory.critical {
+    color: #ff0000;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 /* TOOLTIPS */
 tooltip {
-    font-family: "DejaVu Sans Mono";
-    font-size: 12px;
-    background-color: #1e1e1e;
+    background: #1e1e1e;
+    border: 1px solid #B8860B;
+}
+
+tooltip label {
     color: #B8860B;
-    border: 2px solid #333333;
-    border-radius: 0px;
 }
 
-/* ESTADOS DE LOS MÓDULOS */
-#battery.warning {
-    color: #ffa500;
-}
-
-#battery.critical {
-    color: #ff0000;
-}
-
-#cpu.warning {
-    color: #ffa500;
-}
-
-#cpu.critical {
-    color: #ff0000;
-}
-
-#memory.warning {
-    color: #ffa500;
-}
-
-#memory.critical {
-    color: #ff0000;
-}
-
-/* ESTILOS PARA BOTONES */
-button {
-    border: none;
-    border-radius: 0px;
-    background-color: transparent;
-}
-
-button:hover {
-    background-color: #333333;
-}
-
-/* SEPARADORES */
-#custom-separator {
-    color: #555555;
-    padding: 0 5px;
+/* ANIMACIÓN PARA ESTADOS CRÍTICOS */
+@keyframes blink {
+    to {
+        background-color: #ff0000;
+        color: #000000;
+    }
 }
