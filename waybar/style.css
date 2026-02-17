@@ -11,7 +11,7 @@
 window#waybar {
     background-color: #000000;
     color: #B8860B;
-    border-bottom: 2px solid #B8860B;
+    border-bottom: 4px solid #B8860B;
 }
 
 /* ESTILO DE CADA MÓDULO */
@@ -23,14 +23,20 @@ window#waybar {
 
 #workspaces button.active {
     background-color: #B8860B;
-    color: #000000;
+    color: #C1C15C;
 }
 
 #workspaces button:hover {
-    background-color: #333333;
+    background: #C1C15C;
     box-shadow: inherit;
     text-shadow: inherit;
 }
+
+#workspaces button.focused {
+    background: #B8860B;
+    color: #000000;
+}
+
 
 #mode, #clock, #pulseaudio, #network, #cpu, #memory, #temperature, #battery, #tray, #window {
     font-family: "Font Awesome 7 Free";
