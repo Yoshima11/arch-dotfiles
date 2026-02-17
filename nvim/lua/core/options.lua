@@ -33,3 +33,10 @@ vim.g.mapleader = " "       -- Espacio como tecla líder (muy común en Neovim)
 opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 -- --- views can only be fully collapsed with the global statusline ---
 opt.laststatus = 3
+
+vim.keymap.set('n', '<A-h>', '<C-w>h')
+vim.keymap.set('n', '<A-j>', '<C-w>j')
+vim.keymap.set('n', '<A-k>', '<C-w>k')
+vim.keymap.set('n', '<A-l>', '<C-w>l')
+vim.keymap.set('n', '<A-w>', '<C-w>w')
+vim.keymap.set('n', '<A-p>', '<C-w>p')
