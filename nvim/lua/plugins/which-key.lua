@@ -15,6 +15,8 @@ return {
       { "<leader>f", group = "Archivos (Telescope)" },
       { "<leader>v", group = "Entorno Virtual (Venv)" },
       { "<leader>c", group = "Código / LSP" },
+      { "<leader>t", group = "Terminal" },
+      { "<leader>a", group = "IA / Gemini" },
     })
   end,
 }

@@ -9,7 +9,7 @@ return {
   },
   opts = {
     -- Tecla principal para alternar (mapeo interno del plugin)
-    open_mapping = [[<c-\>]], 
+    open_mapping = [[<c-º>]], 
     insert_mappings = true, -- El atajo funciona en modo insertar
     terminal_mappings = true, -- El atajo funciona dentro de la terminal abierta
     direction = 'float',

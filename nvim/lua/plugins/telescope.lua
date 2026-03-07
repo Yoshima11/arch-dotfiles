@@ -13,8 +13,8 @@ return {
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
       }
     })
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, {}) -- Buscar archivos
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})  -- Buscar texto en el proyecto
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})    -- Ver buffers abiertos
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Buscar archivos" }) -- Buscar archivos
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Buscar texto en el proyecto" })  -- Buscar texto en el proyecto
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Ver buffers abiertos" })    -- Ver buffers abiertos
   end
 }
