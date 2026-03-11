@@ -76,7 +76,7 @@ exec swayidle -w timeout 900 'swaylock -f -c 000000 -C ~/.config/swaylock/config
 # resumed. It will also lock your screen before your computer goes to sleep.
 input "type:keyboard" {
     xkb_layout es
-    xkb_numlock enable 
+    xkb_numlock enable
 }
 ### Input configuration
 #
@@ -263,6 +263,10 @@ bindsym $mod+r mode "resize"
 #        binding_mode       #FF5555 #FF5555 #F8F8F2
 #    }
 #}
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+exec_always gsettings set $gnome-schema color-scheme 'prefer-dark'
 
 exec nm-applet --indicator
 exec blueman-applet

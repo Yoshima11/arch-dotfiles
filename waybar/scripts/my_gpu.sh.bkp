@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# --- Rutas de Hardware ---
+GPU_PATH="/sys/class/drm/card1/device"
+
+# --- Datos de GPU y VRAM ---
+if [ -d "$GPU_PATH" ]; then
+    GPU_LOAD=$(cat "$GPU_PATH/gpu_busy_percent" 2>/dev/null || echo "0")
+    GPU_EDGE=$(sensors | grep "edge" | head -1 | awk '{print $2}' | tr -d '+')
+else
+    GPU_LOAD="0"
+    GPU_EDGE="N/A"
+fi
+
+# --- Salida ---
+echo " GPU: $GPU_LOAD%  [$GPU_EDGE] "

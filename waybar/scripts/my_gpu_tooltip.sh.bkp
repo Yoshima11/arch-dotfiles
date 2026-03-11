@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# --- Rutas de Hardware ---
+GPU_PATH="/sys/class/drm/card1/device"
+
+# --- Datos de GPU y VRAM ---
+if [ -d "$GPU_PATH" ]; then
+    # Obtener VRAM en bytes (Usada / Total)
+    VRAM_USED=$(cat "$GPU_PATH/mem_info_vram_used" 2>/dev/null || echo "0")
+    VRAM_TOTAL=$(cat "$GPU_PATH/mem_info_vram_total" 2>/dev/null || echo "1") # Evitar división por cero
+
+    # Calcular porcentaje real de ocupación
+    VRAM_USAGE=$(echo "scale=2; ($VRAM_USED / $VRAM_TOTAL) * 100" | bc | awk '{printf "%d", $1}')
+
+    # Temperaturas y Power (Aseguramos limpieza de caracteres)
+    GPU_MEM_TEMP=$(sensors | grep -E "mem:|mem" | head -1 | awk '{print $2}' | tr -d '+')
+    GPU_WATTS=$(sensors | grep "PPT" | awk '{print $2}')
+    GPU_FAN=$(sensors | grep "fan1" | tail -1 | awk '{print $2}')
+else
+    VRAM_USAGE="0"
+fi
+
+# --- Salida Final ---
+echo -e "━━━━━━━━━━━━━━━━━━━━━━"
+echo -e " 󰍛  VRAM: $VRAM_USAGE%  [$GPU_MEM_TEMP]"
+echo -e " ⚡ PWR: $GPU_WATTS"
+echo -e " 🌀 FAN: $GPU_FAN RPM"
+echo -e "━━━━━━━━━━━━━━━━━━━━━━"

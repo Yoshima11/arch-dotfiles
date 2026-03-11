@@ -38,7 +38,7 @@ window#waybar {
 }
 
 
-#mode, #clock, #pulseaudio, #network, #cpu, #memory, #temperature, #battery, #tray, #window {
+#mode, #clock, #pulseaudio, #network, #cpu, #memory, #temperature, #my_cpu, #my_ram, #my_gpu, #battery, #tray, #window {
     font-family: "Font Awesome 7 Free";
     font-weight: 400;
     padding: 0 10px;

@@ -78,5 +78,5 @@ export PATH="$PATH:/home/eduardo/.lmstudio/bin"
 export LANG=es_ES.UTF-8
 export LC_TIME=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8
-
+export GTK_THEME=Adwaita:dark
 echo -ne '\e[5 q'
