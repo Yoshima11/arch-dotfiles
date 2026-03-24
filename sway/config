@@ -264,9 +264,28 @@ bindsym $mod+r mode "resize"
 #    }
 #}
 
-set $gnome-schema org.gnome.desktop.interface
-exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
-exec_always gsettings set $gnome-schema color-scheme 'prefer-dark'
+# Variables de entorno para Wayland y GTK
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# Script para importar la configuración de GTK al iniciar
+exec_always {
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+    gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface font-name 'Sans 11'
+}
+
+# Forzar a MPV a ser flotante y ubicarse en la esquina superior derecha
+for_window [app_id="mpv"] {
+    floating enable
+    resize set 832 480
+    move position 1000 50
+    sticky enable
+    border none
+}
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec dbus-update-activation-environment --all
 
 exec nm-applet --indicator
 exec blueman-applet

@@ -6,7 +6,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "custom/my_cpu", "custom/my_ram", "custom/my_gpu", "custom/my_disk", "clock", "tray"],
+    "modules-right": ["custom/my_cpu", "custom/my_ram", "custom/my_gpu", "custom/my_disk", "pulseaudio", "clock", "tray"],
 
     "sway/workspaces": {
     	"all-outputs": false,
@@ -24,7 +24,6 @@
         	"9": "九",
         	"10": "十",
         	"urgent": "⚠",
-        	"focused": "●",
         	"default": "○"
     	}
     },

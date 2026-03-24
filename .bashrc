@@ -10,6 +10,12 @@ alias ll='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
 alias l='ls -CF --color=auto'
 
+# Launch ComfyUI Client
+alias comfyui='chromium --app=http://0.0.0.0:8188 --incognito'
+
+# Alias para monitorear recursos de IA (RAM + AMD GPU)
+alias monitor="watch -c -n 5 'echo \"--- SISTEMA RAM ---\"; free -h; echo \"\"; echo \"--- GPU AMD (ROCm) ---\"; rocm-smi --showuse --showmemuse --showtemp'"
+
 # Directorios amarillos, archivos normales, ejecutables verdes
 export LS_COLORS='di=1;33:ln=36:so=35:pi=35:ex=32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;42'
 
@@ -35,10 +41,6 @@ export PATH=$FLUTTER_HOME/bin:$PATH
 #gradle
 export GRADLE_HOME=/opt/gradle/gradle-7.0.1
 export PATH=$GRADLE_HOME/bin:$PATH
-
-#rocm
-export PATH=$PATH:/opt/rocm/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rocm/lib
 
 shopt -s histappend
 shopt -s histverify
@@ -66,17 +68,14 @@ export PATH="$PATH:/home/eduardo/.local/bin"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-export PYENV_ROOT="$HOME/.virtualenvs/"
+export PYENV_ROOT="$HOME/.pyenv/"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/eduardo/.lmstudio/bin"
-# End of LM Studio CLI section
 
 export LANG=es_ES.UTF-8
 export LC_TIME=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8
 export GTK_THEME=Adwaita:dark
+
 echo -ne '\e[5 q'
