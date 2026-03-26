@@ -15,7 +15,7 @@ liberar_ram() {
 
     sync
     echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null
-    sudo swapoff -a && sudo swapon -a
+    # sudo swapoff -a && sudo swapon -a
 
     echo ""
     echo "Después de liberar RAM:"
