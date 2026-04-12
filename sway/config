@@ -274,6 +274,7 @@ exec_always {
     gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
     gsettings set org.gnome.desktop.interface font-name 'Sans 11'
 }
+for_window [app_id="galculator"] floating enable
 
 # Forzar a MPV a ser flotante y ubicarse en la esquina superior derecha
 for_window [app_id="mpv"] {

@@ -79,3 +79,26 @@ export LC_ALL=es_ES.UTF-8
 export GTK_THEME=Adwaita:dark
 
 echo -ne '\e[5 q'
+export HF_HOME=/mnt/sdb1/.cache/huggingface
+export HF_HOME=/mnt/sdb1/.cache/huggingface
+export HF_ENDPOINT=https://hf-mirror.com
+export UV_CACHE_DIR=/mnt/sdb1/.cache/uv
+export PATH=$PATH:/opt/rocm/bin
+export PYTHONPATH=$PYTHONPATH:/opt/rocm/lib
+
+# Previsualización de imágenes/archivos
+export NNN_PREVIEWDIR="/tmp/nnn/previews"
+export NNN_PAGER="less -R"
+
+# Plugins (esencial para potencia)
+export NNN_PLUG='c:chksum;f:finder;o:fzopen;p:preview-tui;t:tree;v:imgview'
+
+# Orden y opciones
+export NNN_OPTS="deHr"  # d = detalles, a = auto-sel, D = dimenas
+export NNN_OPENER="xdg-open"  # Abrir archivos con app por defecto
+export NNN_BMS="d:~/Documents;D:~/Downloads;p:~/Programas"  # Marcadores
+export NNN_OPENER="xdg-open"
+
+# Colores personalizados
+export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
+
