@@ -3,7 +3,8 @@
     "position": "top",
     "height": 32,
     "css": "~/.config/waybar/style.css",
-
+    "margin": 0,
+    "spacing": 4,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": ["custom/my_cpu", "custom/my_ram", "custom/my_gpu", "custom/my_disk", "pulseaudio", "clock", "tray"],

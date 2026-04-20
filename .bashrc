@@ -10,11 +10,10 @@ alias ll='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
 alias l='ls -CF --color=auto'
 
+alias nnn='nnn -a'
+
 # Launch ComfyUI Client
 alias comfyui='chromium --app=http://0.0.0.0:8188 --incognito'
-
-# Alias para monitorear recursos de IA (RAM + AMD GPU)
-alias monitor="watch -c -n 5 'echo \"--- SISTEMA RAM ---\"; free -h; echo \"\"; echo \"--- GPU AMD (ROCm) ---\"; rocm-smi --showuse --showmemuse --showtemp'"
 
 # Directorios amarillos, archivos normales, ejecutables verdes
 export LS_COLORS='di=1;33:ln=36:so=35:pi=35:ex=32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;42'
@@ -76,9 +75,9 @@ eval "$(pyenv init -)"
 export LANG=es_ES.UTF-8
 export LC_TIME=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8
-export GTK_THEME=Adwaita:dark
 
 echo -ne '\e[5 q'
+
 export HF_HOME=/mnt/sdb1/.cache/huggingface
 export HF_HOME=/mnt/sdb1/.cache/huggingface
 export HF_ENDPOINT=https://hf-mirror.com
@@ -87,11 +86,13 @@ export PATH=$PATH:/opt/rocm/bin
 export PYTHONPATH=$PYTHONPATH:/opt/rocm/lib
 
 # Previsualización de imágenes/archivos
-export NNN_PREVIEWDIR="/tmp/nnn/previews"
+export NNN_PREVIEWDIR="ueberzugpp"
 export NNN_PAGER="less -R"
 
+export NNN_FIFO=/tmp/nnn.fifo
+
 # Plugins (esencial para potencia)
-export NNN_PLUG='c:chksum;f:finder;o:fzopen;p:preview-tui;t:tree;v:imgview'
+export NNN_PLUG='c:chksum;f:finder;o:fzopen;p:preview-tui;t:tree;v:imgview;m:music'
 
 # Orden y opciones
 export NNN_OPTS="deHr"  # d = detalles, a = auto-sel, D = dimenas
@@ -102,3 +103,14 @@ export NNN_OPENER="xdg-open"
 # Colores personalizados
 export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 
+# Define el programa de previsualización (Chafa es excelente con sixels)
+export NNN_PREVIEWIMGPROG='chafa'
+
+# Indica que use el protocolo sixel (nativo en foot)
+export NNN_PREVIEW_IMG_SCALER='sixel'
+
+# Opcional: Si quieres que la vista previa se abra en una ventana nueva de foot
+export NNN_TERMINAL='foot'
+
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt5ct

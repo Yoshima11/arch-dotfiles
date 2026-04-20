@@ -1,0 +1,17 @@
+# ~/.config/wofi/config
+mode = drun
+allow_images = true
+normal_window = true
+single_click = true
+insensitive = true
+hide_scroll = true
+width = 30%
+height = 400
+lines = 15
+location = center
+prompt = "Buscar aplicación..."
+terminal = foot
+
+# Para que coincida con tu tema
+show_actions = false
+show_help = false

@@ -1,40 +1,40 @@
--- ~/.config/nvim/lua/plugins/avante.lua
+--- ~/.config/nvim/lua/plugins/ai.lua
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
-  lazy = false,
-  version = false, 
+  version = false, -- IMPORTANTE: Nunca lo pongas como "*"
   opts = {
-    provider = "gemini", -- Esto indica qué proveedor usar por defecto
-    
-    -- AQUÍ ES DONDE DEBE IR AHORA
+    provider = "openai", -- 1. Usamos el provider 'openai' genérico
     providers = {
-      gemini = {
-        model = "gemini-2.5-flash",
-        max_tokens = 4096,
-        temperature = 0,
-        -- Si prefieres usar Gemini 1.5 Pro, simplemente cambia el modelo arriba
+      openai = {        -- 2. Configuramos 'openai' para que apunte a LM Studio
+        endpoint = "http://127.0.0.1:1234/v1",
+        model = "qwen/qwen3.5-9b-uncensored-hauhaucs-aggressive", -- El nombre exacto de tu modelo en LM Studio
+        api_key_name = "", -- No necesita API key
+        timeout = 30000,
+        extra_request_body = {
+          temperature = 0.7,
+          max_tokens = 8192,
+        },
       },
     },
-
     behaviour = {
-      auto_suggestions = false,
+      auto_suggestions = false, -- Recomendado desactivarlo para modelos locales
       auto_set_highlight_group = true,
       auto_set_keymaps = true,
     },
   },
   
+  keys = {
+    { "<leader>aa", function() require("avante.api").ask() end, desc = "AI Ask (chat)", mode = { "n", "v" } },
+    { "<leader>ae", function() require("avante.api").edit() end, desc = "AI Edit file", mode = { "v" } },
+    { "<leader>af", function() require("avante.api").file_ask() end, desc = "AI Ask about file", mode = { "n" } },
+  },
+  
   dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons",
-    "stevearc/dressing.nvim",
-    "HakonHarnes/img-clip.nvim",
-    {
-      "MeanderingProgrammer/render-markdown.nvim",
-      opts = { file_types = { "markdown", "Avante" } },
-      ft = { "markdown", "Avante" },
-    },
   },
-  build = "make", 
 }

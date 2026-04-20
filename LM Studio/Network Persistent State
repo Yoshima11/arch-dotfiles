@@ -1,0 +1,1 @@
+{"net":{"http_server_properties":{"servers":[{"anonymization":[],"server":"https://redirector.gvt1.com","supports_spdy":true},{"anonymization":[],"server":"https://lmstudio.ai","supports_spdy":true}],"supports_quic":{"address":"2803:9800:94c0:7e05:a774:92f6:21ab:d4db","used_quic":true},"version":5},"network_qualities":{"CAESABiAgICA+P////8B":"4G"}}}

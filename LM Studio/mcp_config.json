@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "websearch-searxng": {
+      "command": "node",
+      "args": ["/home/eduardo/Programas/SearXNG-Websearch-MCP/dist/index.js"],
+      "env": {}
+    }
+  }
+}

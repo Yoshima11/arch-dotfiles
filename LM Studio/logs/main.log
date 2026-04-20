@@ -1,0 +1,630 @@
+[2025-10-23 16:21:46.245] [info]  App starting...
+[2025-10-23 16:21:46.250] [info]  [AppUpdater] Update channel set to 'stable'
+[2025-10-23 16:21:46.943] [info]  Hardware survey for general system resources through 'vulkan' took 96.42ms
+[2025-10-23 16:21:47.206] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2025-10-23 16:21:47.206] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2025-10-23 16:21:47.207] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.30
+[2025-10-23 16:21:48.003] [info]  [AppUpdater] Received version info response
+[2025-10-23 16:21:48.003] [info]  [AppUpdater] Current version: 0.3.30 (build: 2), new version: 0.3.30 (build: 2)
+[2025-10-23 16:21:48.004] [info]  No update available: 0.3.30 (build: 2) <= 0.3.30 (build: 2)
+[2025-10-23 16:21:48.004] [info]  AppUpdater state changed to idle
+[2025-10-23 16:22:01.366] [warn]  Failed to survey hardware with engine 'llama.cpp-linux-x86_64-nvidia-cuda-avx2@1.52.1': LMSCore load lib failed - child process with PID 16623 exited with code 1
+[2025-10-23 16:42:20.777] [error] (node:16404) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2025-10-23 17:08:49.657] [error] [91mE[39m [97m[LMSExternal][39m [97m[Client=80d8820c-d80f-4185-87fe-c1bf882376e4][Endpoint=getOrLoad][39m Error in channel handler: Error: Model not found: qwen/qwen3-4b-2507
+    at Object.handler (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:299:5723)
+    at _0xdfdaee.receivedChannelCreate (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:1041:489)
+    at <computed> [as receivedMessage] (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:1024:14262)
+    at _0x2d8319.<anonymous> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:1082:3054)
+    at _0x2359c4 (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:7:4725623)
+    at _0x2d8319._0x3c6e77 (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:7:4724149)
+    at _0x2d8319.emit (node:events:518:28)
+    at _0x1a1e04.<computed>._0xa534c2 (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:7:4797586)
+    at _0x1a1e04.<computed>.emit (node:events:518:28)
+    at /tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:7:4750622
+[2025-10-23 17:10:06.288] [error] [97m[LMSInternal][Client=plugin:builtin:lmstudio/default-prediction-loop-handler][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x141207.<computed> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:1098:141114)
+    at _0x41e48e._0x38a1fc (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:114:13271)
+    at _0x41e48e.emit (node:events:518:28)
+    at _0x41e48e.onChildMessage (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:104:212442)
+    at _0x41e48e.onChildMessage (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:119:3953)
+    at _0x440042.<anonymous> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:104:211471)
+    at _0x440042.emit (node:events:518:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:608:21354)
+    at ChildProcess.emit (node:events:518:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Reached context length of 4096 tokens with model (arch: gpt-oss) that does not currently support mid-generation context overflow. Try reloading with a larger context length or shortening the prompt/chat.
+    at _0x425e0c.<computed>.predictTokens (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/lib/llmworker.js:85:29842)
+    at async _0x275b42.predictTokens (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/lib/llmworker.js:113:13839)
+    at async _0x275b42.handleMessage (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/lib/llmworker.js:113:3005)
+[2025-10-23 17:10:06.290] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=sendMessage][39m Error in RPC handler: Error: Rehydrated error
+t length of 4096 tokens with model (arch: gpt-oss) that does not currently support mid-generation context overflow. Try reloading with a larger context length or shortening the prompt/chat.
+    at _0x141207.<computed> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:1098:141114)
+    at _0x221a1b.subscriber (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:318:1551)
+    at _0x221a1b.notifier (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:926:197469)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+- Caused By: Error: Channel Error
+    at <computed> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:421:92429)
+- Caused By: Error: received prediction-error
+    at _0x141207.<computed> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:1098:141114)
+    at _0x41e48e._0x38a1fc (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:114:13271)
+    at _0x41e48e.emit (node:events:518:28)
+    at _0x41e48e.onChildMessage (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:104:212442)
+    at _0x41e48e.onChildMessage (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:119:3953)
+    at _0x440042.<anonymous> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:104:211471)
+    at _0x440042.emit (node:events:518:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/main/index.js:608:21354)
+    at ChildProcess.emit (node:events:518:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Reached context length of 4096 tokens with model (arch: gpt-oss) that does not currently support mid-generation context overflow. Try reloading with a larger context length or shortening the prompt/chat.
+    at _0x425e0c.<computed>.predictTokens (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/lib/llmworker.js:85:29842)
+    at async _0x275b42.predictTokens (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/lib/llmworker.js:113:13839)
+    at async _0x275b42.handleMessage (/tmp/.mount_lmstud8q8RvA/resources/app/.webpack/lib/llmworker.js:113:3005)
+[2025-12-19 17:20:51.695] [info]  App starting...
+[2025-12-19 17:20:51.699] [info]  [AppUpdater] Update channel set to 'stable'
+[2025-12-19 17:20:51.758] [info]  Hardware survey for general system resources through 'vulkan' took 54.48ms
+[2025-12-19 17:20:51.853] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2025-12-19 17:20:51.854] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2025-12-19 17:20:51.854] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.35
+[2025-12-19 17:20:52.443] [info]  [AppUpdater] Received version info response
+[2025-12-19 17:20:52.443] [info]  [AppUpdater] Current version: 0.3.35 (build: 1), new version: 0.3.36 (build: 1)
+[2025-12-19 17:20:52.444] [info]  Update available: 0.3.36 > 0.3.35
+[2025-12-19 17:20:52.444] [info]  AppUpdater state changed to update-available
+[2025-12-19 17:21:01.592] [error] [97m[IndexedModelRecommendationProvider][39m No engine is selected to load 'gguf' model 'lmstudio-community/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf'. Cannot estimate model fit, returning that the model will not fit.
+[2025-12-19 17:21:01.592] [error] [97m[IndexedModelRecommendationProvider][39m No engine is selected to load 'gguf' model 'lmstudio-community/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf'. Cannot estimate model fit, returning that the model will not fit.
+[2025-12-19 17:21:01.671] [warn]  Failed to survey hardware with engine 'llama.cpp-linux-x86_64-nvidia-cuda-avx2@1.63.1': LMSCore load lib failed - child process with PID 59347 exited with code 1
+[2025-12-19 17:36:10.762] [error] [97m[ArtifactResolutionProvider][39m Failed to resolve artifact {
+  type: 'artifact',
+  owner: 'ibm',
+  name: 'granite-3.2-8b',
+  purpose: 'custom'
+} Error: API request parsing failed. Status: 500 Internal Server Error
+    at _0x32e483.<computed>.handleFetchUnauthenticatedWithoutParsing (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:541:7942)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async _0x32e483.<computed>.handleFetchUnauthenticated (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:541:8521)
+    at async _0x4c3159.getArtifactRevisionWithManifest (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:538:4706)
+    at async _0x39021b.artifactDownloadResolveArtifact (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:515:27112)
+    at async _0x39021b.artifactDownloadResolutionWorker (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:515:20498)
+[2025-12-19 17:36:57.072] [error] [97m[ArtifactResolutionProvider][39m Failed to resolve artifact {
+  type: 'artifact',
+  owner: 'qwen',
+  name: 'qwen3-next-80b',
+  purpose: 'custom'
+} Error: API request parsing failed. Status: 500 Internal Server Error
+    at _0x32e483.<computed>.handleFetchUnauthenticatedWithoutParsing (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:541:7942)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async _0x32e483.<computed>.handleFetchUnauthenticated (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:541:8521)
+    at async _0x4c3159.getArtifactRevisionWithManifest (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:538:4706)
+    at async _0x39021b.artifactDownloadResolveArtifact (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:515:27112)
+    at async _0x39021b.artifactDownloadResolutionWorker (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:515:20498)
+[2025-12-19 17:36:58.574] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=getArtifactRevisionThumbnailPngBase64][39m Error in RPC handler: Error: API request parsing failed. Status: 500 Internal Server Error
+    at _0x32e483.<computed>.handleFetchUnauthenticatedWithoutParsing (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:541:7942)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async _0x4c3159.getArtifactRevisionThumbnailPngBase64 (/tmp/.mount_lmstudSGWJ8r/resources/app/.webpack/main/index.js:538:4169)
+[2025-12-19 17:39:11.128] [error] (node:59142) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2026-01-18 01:40:27.647] [info]  App starting...
+[2026-01-18 01:40:27.650] [info]  [AppUpdater] Update channel set to 'stable'
+[2026-01-18 01:40:27.714] [info]  Hardware survey for general system resources through 'vulkan' took 58.63ms
+[2026-01-18 01:40:27.819] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-01-18 01:40:27.819] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-01-18 01:40:27.820] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.35
+[2026-01-18 01:40:28.726] [info]  [AppUpdater] Received version info response
+[2026-01-18 01:40:28.727] [info]  [AppUpdater] Current version: 0.3.35 (build: 1), new version: 0.3.39 (build: 2)
+[2026-01-18 01:40:28.727] [info]  Update available: 0.3.39 > 0.3.35
+[2026-01-18 01:40:28.727] [info]  AppUpdater state changed to update-available
+[2026-01-18 01:40:33.927] [error] [97m[IndexedModelRecommendationProvider][39m No engine is selected to load 'gguf' model 'lmstudio-community/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf'. Cannot estimate model fit, returning that the model will not fit.
+[2026-01-18 01:40:33.928] [error] [97m[IndexedModelRecommendationProvider][39m No engine is selected to load 'gguf' model 'lmstudio-community/Qwen3-4B-Thinking-2507-GGUF/Qwen3-4B-Thinking-2507-Q4_K_M.gguf'. Cannot estimate model fit, returning that the model will not fit.
+[2026-01-18 01:40:38.816] [info]  AppUpdater state changed to remind-me-later
+[2026-01-18 01:43:10.816] [error] (node:12872) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2026-01-18 02:01:37.285] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 9314 tokens when context the overflows. However, the model is loaded with context length of only 4096 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 02:02:26.978] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 9314 tokens when context the overflows. However, the model is loaded with context length of only 4096 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 02:06:20.689] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=reloadModel][39m Error in RPC handler: Error: Received load-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x55c21f (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:6533)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Failed to load model
+    at _0x20b8b3.LLMEngineWrapper.load (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:15593)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _0x2f078e.loadModel (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:14780)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:6372)
+[2026-01-18 02:09:06.147] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Received load-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x55c21f (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:6533)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Failed to load model
+    at _0x20b8b3.LLMEngineWrapper.load (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:15593)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _0x2f078e.loadModel (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:14780)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:6372)
+[2026-01-18 02:09:06.148] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-01-18 02:09:30.102] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Received load-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x55c21f (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:6533)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Failed to load model
+    at _0x20b8b3.LLMEngineWrapper.load (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:15593)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _0x2f078e.loadModel (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:14780)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:6372)
+[2026-01-18 02:09:30.102] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-01-18 02:10:11.202] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Received load-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x55c21f (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:6533)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Failed to load model
+    at _0x20b8b3.LLMEngineWrapper.load (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:15593)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _0x2f078e.loadModel (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:14780)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:6372)
+[2026-01-18 02:10:11.223] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-01-18 02:11:17.160] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 9314 tokens when context the overflows. However, the model is loaded with context length of only 8192 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 02:12:14.870] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 9314 tokens when context the overflows. However, the model is loaded with context length of only 9314 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 02:13:20.680] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: The model has crashed without additional information. (Exit code: null)
+    at _0xdccbb0._0x3adfdd (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13815)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildExit (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213160)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212486)
+    at _0x1df6e1.emit (node:events:531:35)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22632)
+    at ChildProcess.emit (node:events:519:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+    at Process.callbackTrampoline (node:internal/async_hooks:130:17)
+[2026-01-18 02:14:23.632] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 9314 tokens when context the overflows. However, the model is loaded with context length of only 8192 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 02:20:17.555] [info]  Opening folder: /home/eduardo/.lmstudio/extensions/backends
+[2026-01-18 02:20:24.623] [info]  Opening folder: /home/eduardo/.lmstudio/models
+[2026-01-18 02:27:46.023] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=countTokens][39m Error in RPC handler: Error: Cannot find model of instance reference. The model might have already been unloaded.
+    at _0x5ae1ad.getInstanceBySpecifierOrThrow (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:241:3751)
+    at _0x5ae1ad.getLLMModelBySpecifierOrThrow (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:241:6195)
+    at Object.handler (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:352:48679)
+    at _0x598e5e.receivedRpcCall (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1149:152)
+    at <computed> [as receivedMessage] (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1122:14701)
+    at MessagePortMain.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1122:13158)
+    at MessagePortMain.emit (node:events:519:28)
+    at MessagePortMain._internalPort.emit (node:electron/js2c/browser_init:2:111078)
+    at Object.callbackTrampoline (node:internal/async_hooks:130:17)
+[2026-01-18 02:28:53.742] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 12230 tokens when context the overflows. However, the model is loaded with context length of only 4096 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 02:29:25.415] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=reloadModel][39m Error in RPC handler: Error: Received load-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x55c21f (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:6533)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Failed to load model
+    at _0x20b8b3.LLMEngineWrapper.load (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:15593)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _0x2f078e.loadModel (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:14780)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:6372)
+[2026-01-18 02:31:06.246] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 12230 tokens when context the overflows. However, the model is loaded with context length of only 8192 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 02:34:40.562] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 13004 tokens when context the overflows. However, the model is loaded with context length of only 12300 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudlCmcLB/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 02:36:42.375] [error] (node:12872) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added to [Server]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+[2026-01-18 16:30:44.212] [info]  App starting...
+[2026-01-18 16:30:44.215] [info]  [AppUpdater] Update channel set to 'stable'
+[2026-01-18 16:30:44.279] [info]  Hardware survey for general system resources through 'vulkan' took 57.69ms
+[2026-01-18 16:30:44.381] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-01-18 16:30:44.381] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-01-18 16:30:44.382] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.35
+[2026-01-18 16:30:45.262] [info]  [AppUpdater] Received version info response
+[2026-01-18 16:30:45.262] [info]  [AppUpdater] Current version: 0.3.35 (build: 1), new version: 0.3.39 (build: 2)
+[2026-01-18 16:30:45.263] [info]  Update available: 0.3.39 > 0.3.35
+[2026-01-18 16:30:45.263] [info]  AppUpdater state changed to update-available
+[2026-01-18 16:31:03.218] [info]  AppUpdater state changed to remind-me-later
+[2026-01-18 16:32:14.957] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=predict][39m Error in channel handler: Error: received prediction-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x473f1a (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/main/index.js:119:13434)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Trying to keep the first 13380 tokens when context the overflows. However, the model is loaded with context length of only 8192 tokens, which is not enough. Try to load the model with a larger context length, or provide a shorter input
+    at _0x20b8b3.LLMEngineWrapper.predictTokens (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/lib/llmworker.js:85:29925)
+    at async _0x2f078e.predictTokens (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/lib/llmworker.js:124:17631)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudw7k1cc/resources/app/.webpack/lib/llmworker.js:124:7172)
+[2026-01-18 16:33:53.138] [error] (node:3925) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added to [Server]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `lm-studio --trace-warnings ...` to show where the warning was created)
+[2026-01-19 00:28:44.342] [info]  App starting...
+[2026-01-19 00:28:44.345] [info]  [AppUpdater] Update channel set to 'stable'
+[2026-01-19 00:28:44.409] [info]  Hardware survey for general system resources through 'vulkan' took 59.07ms
+[2026-01-19 00:28:44.511] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-01-19 00:28:44.511] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-01-19 00:28:44.511] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.35
+[2026-01-19 00:28:45.108] [info]  [AppUpdater] Received version info response
+[2026-01-19 00:28:45.108] [info]  [AppUpdater] Current version: 0.3.35 (build: 1), new version: 0.3.39 (build: 2)
+[2026-01-19 00:28:45.108] [info]  Update available: 0.3.39 > 0.3.35
+[2026-01-19 00:28:45.108] [info]  AppUpdater state changed to update-available
+[2026-01-19 00:45:13.673] [error] (node:17440) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added to [Server]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `lm-studio --trace-warnings ...` to show where the warning was created)
+[2026-01-19 09:31:29.364] [info]  App starting...
+[2026-01-19 09:31:29.367] [info]  [AppUpdater] Update channel set to 'stable'
+[2026-01-19 09:31:29.432] [info]  Hardware survey for general system resources through 'vulkan' took 58.86ms
+[2026-01-19 09:31:29.540] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-01-19 09:31:29.541] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-01-19 09:31:29.541] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.35
+[2026-01-19 09:31:30.164] [info]  [AppUpdater] Received version info response
+[2026-01-19 09:31:30.165] [info]  [AppUpdater] Current version: 0.3.35 (build: 1), new version: 0.3.39 (build: 2)
+[2026-01-19 09:31:30.165] [info]  Update available: 0.3.39 > 0.3.35
+[2026-01-19 09:31:30.165] [info]  AppUpdater state changed to update-available
+[2026-01-19 09:34:16.724] [error] (node:4042) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2026-01-19 10:17:34.844] [error] (node:4042) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added to [Server]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+[2026-01-19 14:37:26.982] [error] Model instance not found: gtkkyq/3xPqgav10a1YpOWYp
+[2026-01-19 14:37:26.982] [error] Model instance not found: gtkkyq/3xPqgav10a1YpOWYp
+[2026-01-19 14:37:26.983] [error] Model instance not found: gtkkyq/3xPqgav10a1YpOWYp
+[2026-01-19 14:37:26.983] [error] Model instance not found: gtkkyq/3xPqgav10a1YpOWYp
+[2026-01-19 14:37:26.983] [error] Model instance not found: gtkkyq/3xPqgav10a1YpOWYp
+[2026-01-19 14:37:26.984] [error] Model instance not found: gtkkyq/3xPqgav10a1YpOWYp
+[2026-03-12 09:51:41.979] [info]  App starting...
+[2026-03-12 09:51:41.983] [info]  [AppUpdater] Update channel set to 'stable'
+[2026-03-12 09:51:42.053] [info]  Hardware survey for general system resources through 'vulkan' took 66.22ms
+[2026-03-12 09:51:42.163] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-03-12 09:51:42.163] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-03-12 09:51:42.163] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.35
+[2026-03-12 09:51:43.069] [info]  [AppUpdater] Received version info response
+[2026-03-12 09:51:43.069] [info]  [AppUpdater] Current version: 0.3.35 (build: 1), new version: 0.4.6 (build: 1)
+[2026-03-12 09:51:43.069] [info]  Update available: 0.4.6 > 0.3.35
+[2026-03-12 09:51:43.069] [info]  AppUpdater state changed to update-available
+[2026-03-12 09:51:53.774] [info]  AppUpdater state changed to remind-me-later
+[2026-03-12 09:52:43.515] [error] (node:67635) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2026-03-12 10:06:40.537] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=countTokens][39m Error in RPC handler: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-12 10:06:40.537] [error] Unhandled Rejection at: {} reason: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-12 10:06:43.540] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Operation canceled.
+    at _0xdccbb0._0x36dfe0 (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:7581)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildExit (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:213160)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:212486)
+    at _0x1df6e1.emit (node:events:531:35)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:667:22632)
+    at ChildProcess.emit (node:events:519:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[2026-03-12 10:06:43.541] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-03-12 10:06:46.306] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Error loading model.
+    at _0xdccbb0._0x36dfe0 (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:7663)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildExit (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:213160)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:212486)
+    at _0x1df6e1.emit (node:events:531:35)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:667:22632)
+    at ChildProcess.emit (node:events:519:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[2026-03-12 10:06:46.306] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-03-12 10:06:47.307] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=countTokens][39m Error in RPC handler: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:06:47.308] [error] Unhandled Rejection at: {} reason: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:06:57.970] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Error loading model.
+    at _0xdccbb0._0x36dfe0 (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:7663)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildExit (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:213160)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:212486)
+    at _0x1df6e1.emit (node:events:531:35)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:667:22632)
+    at ChildProcess.emit (node:events:519:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[2026-03-12 10:06:57.970] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-03-12 10:06:58.973] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=countTokens][39m Error in RPC handler: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:06:58.973] [error] Unhandled Rejection at: {} reason: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:07:45.320] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Error loading model.
+    at _0xdccbb0._0x36dfe0 (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:7663)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildExit (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:213160)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:212486)
+    at _0x1df6e1.emit (node:events:531:35)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:667:22632)
+    at ChildProcess.emit (node:events:519:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[2026-03-12 10:07:45.320] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-03-12 10:07:46.323] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=countTokens][39m Error in RPC handler: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:07:46.324] [error] Unhandled Rejection at: {} reason: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:08:45.058] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Error loading model.
+    at _0xdccbb0._0x36dfe0 (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:7663)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildExit (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:213160)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:212486)
+    at _0x1df6e1.emit (node:events:531:35)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:667:22632)
+    at ChildProcess.emit (node:events:519:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[2026-03-12 10:08:45.059] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-03-12 10:08:46.060] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=countTokens][39m Error in RPC handler: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:08:46.061] [error] Unhandled Rejection at: {} reason: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:27:31.098] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Error loading model.
+    at _0xdccbb0._0x36dfe0 (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:7663)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildExit (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:213160)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:107:212486)
+    at _0x1df6e1.emit (node:events:531:35)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:667:22632)
+    at ChildProcess.emit (node:events:519:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+[2026-03-12 10:27:31.099] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-03-12 10:27:32.102] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=countTokens][39m Error in RPC handler: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-12 10:27:32.103] [error] Unhandled Rejection at: {} reason: Error: Model is unloaded.
+    at /tmp/.mount_lmstudQ5d3cY/resources/app/.webpack/main/index.js:124:3698
+[2026-03-13 17:32:57.146] [info]  App starting...
+[2026-03-13 17:32:57.149] [info]  [AppUpdater] Update channel set to 'stable'
+[2026-03-13 17:32:57.221] [info]  Hardware survey for general system resources through 'vulkan' took 66.91ms
+[2026-03-13 17:32:57.334] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-03-13 17:32:57.335] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-03-13 17:32:57.335] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.35
+[2026-03-13 17:32:57.926] [info]  [AppUpdater] Received version info response
+[2026-03-13 17:32:57.927] [info]  [AppUpdater] Current version: 0.3.35 (build: 1), new version: 0.4.6 (build: 1)
+[2026-03-13 17:32:57.927] [info]  Update available: 0.4.6 > 0.3.35
+[2026-03-13 17:32:57.927] [info]  AppUpdater state changed to update-available
+[2026-03-13 17:33:44.515] [info]  Opening folder: /home/eduardo/.lmstudio/extensions/backends
+[2026-03-13 17:34:04.160] [info]  AppUpdater state changed to remind-me-later
+[2026-03-13 17:43:17.111] [error] (node:259399) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2026-03-15 22:18:25.188] [info]  App starting...
+[2026-03-15 22:18:25.192] [info]  [AppUpdater] Update channel set to 'stable'
+[2026-03-15 22:18:25.262] [info]  Hardware survey for general system resources through 'vulkan' took 64.88ms
+[2026-03-15 22:18:25.361] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-03-15 22:18:25.361] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-03-15 22:18:25.362] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.3.35
+[2026-03-15 22:18:26.272] [info]  [AppUpdater] Received version info response
+[2026-03-15 22:18:26.272] [info]  [AppUpdater] Current version: 0.3.35 (build: 1), new version: 0.4.6 (build: 1)
+[2026-03-15 22:18:26.272] [info]  Update available: 0.4.6 > 0.3.35
+[2026-03-15 22:18:26.273] [info]  AppUpdater state changed to update-available
+[2026-03-15 22:18:31.218] [error] [97m[IndexedModelRecommendationProvider][39m No engine is selected to load 'gguf' model 'lmstudio-community/gemma-3-4b-it-GGUF/gemma-3-4b-it-Q4_K_M.gguf'. Cannot estimate model fit, returning that the model will not fit.
+[2026-03-15 22:20:02.120] [error] (node:124402) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2026-03-15 22:43:38.963] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Received load-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x55c21f (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:124:6533)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Failed to load model
+    at _0x20b8b3.LLMEngineWrapper.load (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/lib/llmworker.js:85:15593)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _0x2f078e.loadModel (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/lib/llmworker.js:124:14780)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/lib/llmworker.js:124:6372)
+[2026-03-15 22:43:38.965] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-03-15 22:43:38.965] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=countTokens][39m Error in RPC handler: Error: Model is unloaded.
+    at /tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:124:3698
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-15 22:43:38.966] [error] Unhandled Rejection at: {} reason: Error: Model is unloaded.
+    at /tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:124:3698
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-15 22:45:11.318] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m Error in channel handler: Error: Received load-error
+    at _0x1d39de.<computed> (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:1196:144922)
+    at _0xdccbb0._0x55c21f (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:124:6533)
+    at _0xdccbb0.emit (node:events:519:28)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:107:213718)
+    at _0xdccbb0.onChildMessage (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:124:4013)
+    at _0x1df6e1.<anonymous> (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:107:212760)
+    at _0x1df6e1.emit (node:events:519:28)
+    at ChildProcess.<anonymous> (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/main/index.js:667:22805)
+    at ChildProcess.emit (node:events:519:28)
+    at emit (node:internal/child_process:949:14)
+- Caused By: Error: Failed to load model
+    at _0x20b8b3.LLMEngineWrapper.load (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/lib/llmworker.js:85:15593)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _0x2f078e.loadModel (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/lib/llmworker.js:124:14780)
+    at async _0x2f078e.handleMessage (/tmp/.mount_lmstudDjqxkW/resources/app/.webpack/lib/llmworker.js:124:6372)
+[2026-03-15 22:45:11.318] [error] [97m[LMSInternal][Client=LM Studio][Endpoint=loadModel][39m No instance reference assigned before error
+[2026-03-15 23:06:17.629] [info]  Hardware survey for general system resources through 'vulkan' took 53.90ms
+[2026-03-15 23:06:17.901] [info]  App starting...
+[2026-03-15 23:06:17.902] [info]  [AppUpdater] Feed base: https://updates.lmstudio.ai, channel: stable
+[2026-03-15 23:06:17.903] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-03-15 23:06:17.903] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-03-15 23:06:17.903] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.4.6
+[2026-03-15 23:06:18.650] [info]  [AppUpdater] Received version info response
+[2026-03-15 23:06:18.650] [info]  [AppUpdater] Current version: 0.4.6 (build: 1), new version: 0.4.6 (build: 1)
+[2026-03-15 23:06:18.650] [info]  No update available: 0.4.6 (build: 1) <= 0.4.6 (build: 1)
+[2026-03-15 23:06:18.651] [info]  AppUpdater state changed to idle
+[2026-03-15 23:06:31.242] [warn]  Failed to survey hardware with engine 'llama.cpp-linux-x86_64-nvidia-cuda-avx2@2.5.0': LMSCore load lib failed - child process with PID 224463 exited with code 1
+[2026-03-15 23:07:14.696] [error] [SystemResourcesObserverProxyObject] System resources observer process exited unexpectedly (pid 224030, exitCode null).
+[2026-03-15 23:10:39.282] [info]  Hardware survey for general system resources through 'vulkan' took 49.24ms
+[2026-03-15 23:10:39.410] [info]  App starting...
+[2026-03-15 23:10:39.411] [info]  [AppUpdater] Feed base: https://updates.lmstudio.ai, channel: stable
+[2026-03-15 23:10:39.411] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-03-15 23:10:39.412] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-03-15 23:10:39.412] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.4.6
+[2026-03-15 23:10:40.029] [info]  [AppUpdater] Received version info response
+[2026-03-15 23:10:40.029] [info]  [AppUpdater] Current version: 0.4.6 (build: 1), new version: 0.4.6 (build: 1)
+[2026-03-15 23:10:40.030] [info]  No update available: 0.4.6 (build: 1) <= 0.4.6 (build: 1)
+[2026-03-15 23:10:40.030] [info]  AppUpdater state changed to idle
+[2026-03-15 23:11:11.804] [error] (node:230746) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2026-03-16 05:04:16.539] [error] [SystemResourcesObserverProxyObject] System resources observer process exited unexpectedly (pid 230884, exitCode null).
+[2026-03-17 21:43:14.715] [info]  Hardware survey for general system resources through 'vulkan' took 57.90ms
+[2026-03-17 21:43:14.979] [info]  App starting...
+[2026-03-17 21:43:14.980] [info]  [AppUpdater] Feed base: https://updates.lmstudio.ai, channel: stable
+[2026-03-17 21:43:14.981] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-03-17 21:43:14.981] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-03-17 21:43:14.982] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.4.6
+[2026-03-17 21:43:15.705] [info]  [AppUpdater] Received version info response
+[2026-03-17 21:43:15.706] [info]  [AppUpdater] Current version: 0.4.6 (build: 1), new version: 0.4.6 (build: 1)
+[2026-03-17 21:43:15.706] [info]  No update available: 0.4.6 (build: 1) <= 0.4.6 (build: 1)
+[2026-03-17 21:43:15.706] [info]  AppUpdater state changed to idle
+[2026-03-17 21:55:44.793] [error] (node:102663) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `lm-studio --trace-deprecation ...` to show where the warning was created)
+[2026-03-18 04:57:50.275] [error] [SystemResourcesObserverProxyObject] System resources observer process exited unexpectedly (pid 102842, exitCode null).
+[2026-03-22 00:50:56.009] [info]  Hardware survey for general system resources through 'vulkan' took 59.99ms
+[2026-03-22 00:50:56.276] [info]  App starting...
+[2026-03-22 00:50:56.276] [info]  [AppUpdater] Feed base: https://updates.lmstudio.ai, channel: stable
+[2026-03-22 00:50:56.277] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-03-22 00:50:56.277] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-03-22 00:50:56.278] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.4.6
+[2026-03-22 00:50:56.850] [info]  [AppUpdater] Received version info response
+[2026-03-22 00:50:56.850] [info]  [AppUpdater] Current version: 0.4.6 (build: 1), new version: 0.4.7 (build: 4)
+[2026-03-22 00:50:56.850] [info]  Update available: 0.4.7 > 0.4.6
+[2026-03-22 00:50:56.851] [info]  AppUpdater state changed to update-available
+[2026-03-22 00:56:40.659] [error] [SystemResourcesObserverProxyObject] System resources observer process exited unexpectedly (pid 7014, exitCode null).
+[2026-03-23 05:49:49.468] [info]  Hardware survey for general system resources through 'vulkan' took 410.70ms
+[2026-03-23 05:49:50.452] [info]  App starting...
+[2026-03-23 05:49:50.453] [info]  [AppUpdater] Feed base: https://updates.lmstudio.ai, channel: stable
+[2026-03-23 05:49:50.454] [info]  [AppUpdater] Checking for updates... (current state: idle)
+[2026-03-23 05:49:50.454] [info]  AppUpdater state changed to checking-for-updates-periodic
+[2026-03-23 05:49:50.454] [info]  [AppUpdater] Fetching version info from https://versions-prod.lmstudio.ai/update/linux/x86/0.4.6
+[2026-03-23 05:49:52.052] [info]  [AppUpdater] Received version info response
+[2026-03-23 05:49:52.052] [info]  [AppUpdater] Current version: 0.4.6 (build: 1), new version: 0.4.7 (build: 4)
+[2026-03-23 05:49:52.052] [info]  Update available: 0.4.7 > 0.4.6
+[2026-03-23 05:49:52.052] [info]  AppUpdater state changed to update-available

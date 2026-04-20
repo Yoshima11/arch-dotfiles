@@ -4,6 +4,14 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# Elimina las barras de título para todas las ventanas.
+default_border none
+default_floating_border none
+
+# Para aplicar a TODOS los workspaces.
+gaps inner 7
+gaps outer 3
+
 exec_always {
     export LANG=es_ES.UTF-8
     export LC_ALL=es_ES.UTF-8
@@ -48,7 +56,10 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+set $menu wofi --show drun
+bindsym $mod+d exec $menu
 
 ### Output configuration
 #
@@ -63,6 +74,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-2 mode 1920x1080 pos 0 0 bg ~/Pictures/fondo4.png stretch
 output HDMI-A-1 mode 1920x1080 pos 1920 0 bg ~/Pictures/fondo4.png stretch
+output HDMI-A-2 mode 1920x1080 pos 3840 0 bg ~/Pictures/fondo4.png stretch
 ### Idle configuration
 #
 # Example configuration:
@@ -113,7 +125,8 @@ input "type:keyboard" {
     # Start your launcher
     # bindsym $mod+d exec $menu
     # bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'PxPlus IBM VGA 9x16-12' -p 'dmenu%'"
-    bindsym $mod+d exec fuzzel
+    # bindsym $mod+d exec fuzzel
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -267,6 +280,10 @@ bindsym $mod+r mode "resize"
 # Variables de entorno para Wayland y GTK
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
+# QT config
+set $env QT_QPA_PLATFORM wayland
+set $env QT_QPA_PLATFORMTHEME qt5ct
+
 # Script para importar la configuración de GTK al iniciar
 exec_always {
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
@@ -275,15 +292,6 @@ exec_always {
     gsettings set org.gnome.desktop.interface font-name 'Sans 11'
 }
 for_window [app_id="galculator"] floating enable
-
-# Forzar a MPV a ser flotante y ubicarse en la esquina superior derecha
-for_window [app_id="mpv"] {
-    floating enable
-    resize set 832 480
-    move position 1000 50
-    sticky enable
-    border none
-}
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec dbus-update-activation-environment --all

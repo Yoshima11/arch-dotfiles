@@ -1,0 +1,86 @@
+/* ~/.config/wofi/style.css */
+/* Tema amarillo y negro - Coincidiendo con tu configuración de Sway */
+
+* {
+    font-family: "DejaVu Sans Mono", "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+/* Ventana principal */
+window {
+    background-color: #000000;  /* $bg-color */
+    border-radius: 0px;
+    border: 2px solid #C1C15C;  /* $accent-yellow */
+}
+
+/* Barra de búsqueda */
+#input {
+    margin: 1px 1px 1px 1px;
+    padding: 0px;
+    border-radius: 0px;
+    border: 0px solid #B8860B;  /* $dark-yellow */
+    background-color: #000000;  /* $gray */
+    color: #C1C15C;             /* $text-color */
+}
+
+#input:focus {
+    border-color: #C1C15C;      /* $accent-yellow */
+}
+
+/* Contenedor externo */
+#outer-box {
+    margin: 10px;
+}
+
+/* Área de scroll */
+#scroll {
+    margin-top: 10px;
+}
+
+/* Cada entrada (aplicación) */
+#entry {
+    padding: 8px 11px;
+    border-radius: 0px;
+    color: #C1C15C;             /* $text-color */
+    background-color: transparent;
+}
+
+/* Entrada seleccionada (hover o navegación con teclado) */
+#entry:selected {
+    background-color: #C1C15C;  /* $accent-yellow */
+    color: #000000;             /* $bg-color */
+}
+
+/* Íconos de las aplicaciones */
+#entry image {
+    margin-right: 12px;
+}
+
+/* Entrada seleccionada - ícono también cambia de color */
+#entry:selected image {
+    color: #000000;             /* $bg-color */
+}
+
+/* Texto de ayuda (si se muestra) */
+#help {
+    color: #6272A4;             /* $inactive-text-color */
+    margin-top: 10px;
+    padding: 8px;
+    border-top: 1px solid #B8860B;  /* $dark-yellow */
+}
+
+/* Scrollbar personalizada */
+scrollbar {
+    background-color: #282A36;  /* $gray */
+    border-radius: 0px;
+}
+
+scrollbar slider {
+    background-color: #C1C15C;  /* $accent-yellow */
+    border-radius: 0px;
+    min-width: 8px;
+}
+
+scrollbar slider:hover {
+    background-color: #B8860B;  /* $dark-yellow */
+}
