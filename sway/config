@@ -296,6 +296,9 @@ for_window [app_id="galculator"] floating enable
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec dbus-update-activation-environment --all
 
+force_display_urgency_hint 500
+focus_on_window_activation "urgent"
+
 exec nm-applet --indicator
 exec blueman-applet
 #exec swaymsg input type:keyboard xkb_numlock enable
